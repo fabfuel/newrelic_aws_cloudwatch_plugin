@@ -1,0 +1,60 @@
+newrelic:
+  license_key: <%= ENV['NEW_RELIC_LICENSE_KEY']%>
+
+aws:
+  access_key: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+  secret_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+
+  #Use the following line disable the key checks and enable usage of AWS instance metadata for setting keys
+  #use_aws_metadata: true
+
+  # Specify AWS regions to query for metrics
+  regions:
+<% if ENV['REGION_US_EAST_1'] == 'true' %>
+    - us-east-1
+<% end %>
+<% if ENV['REGION_US_WEST_2'] == 'true' %>
+    - us-west-2
+<% end %>
+<% if ENV['REGION_US_WEST_1'] == 'true' %>
+    - us-west-1
+<% end %>
+<% if ENV['REGION_EU_WEST_1'] == 'true' %>
+    - eu-west-1
+<% end %>
+<% if ENV['REGION_EU_CENTRAL_1'] == 'true' %>
+    - eu-central-1
+<% end %>
+<% if ENV['REGION_AP_SOUTHEAST_1'] == 'true' %>
+    - ap-southeast-1
+<% end %>
+<% if ENV['REGION_AP_NORTHEAST_1'] == 'true' %>
+    - ap-northeast-1
+<% end %>
+<% if ENV['REGION_AP_SOUTHEAST_2'] == 'true' %>
+    - ap-southeast-2
+<% end %>
+<% if ENV['REGION_AP_NORTHEAST_2'] == 'true' %>
+    - ap-northeast-2
+<% end %>
+<% if ENV['REGION_SA_EAST_1'] == 'true' %>
+    - sa-east-1
+<% end %>
+
+agents:
+  ec2:
+    enabled: <%= ENV.fetch('MONITOR_EC2', false) %>
+  ebs:
+    enabled: <%= ENV.fetch('MONITOR_EBS', false) %>
+  elb:
+    enabled: <%= ENV.fetch('MONITOR_ELB', false) %>
+  rds:
+    enabled: <%= ENV.fetch('MONITOR_RDS', false) %>
+  sqs:
+    enabled: <%= ENV.fetch('MONITOR_SQS', false) %>
+  sns:
+    enabled: <%= ENV.fetch('MONITOR_SNS', false) %>
+  ec:
+    enabled: <%= ENV.fetch('MONITOR_EC', false) %>
+  ecr:
+    enabled: <%= ENV.fetch('MONITOR_ECR', false) %>

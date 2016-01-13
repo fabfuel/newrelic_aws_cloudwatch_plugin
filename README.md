@@ -1,5 +1,7 @@
 # New Relic Amazon CloudWatch Plugin
 
+[![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/)
+
 This tool provides the metric collection agents for the following New Relic plugins:
 
 - EC2

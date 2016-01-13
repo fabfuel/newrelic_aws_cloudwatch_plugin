@@ -1,0 +1,24 @@
+newrelic:
+  image: fabfuel/newrelic-aws-cloudwatch-plugin
+  environment:
+    NEW_RELIC_LICENSE_KEY: **None**
+    AWS_ACCESS_KEY_ID: **None**
+    AWS_SECRET_ACCESS_KEY: **None**
+    MONITOR_EC2: "true"
+    MONITOR_EBS: "false"
+    MONITOR_ELB: "false"
+    MONITOR_RDS: "false"
+    MONITOR_SQS: "false"
+    MONITOR_SNS: "false"
+    MONITOR_EC: "false"
+    MONITOR_ECR: "false"
+    REGION_US_EAST_1: "false"
+    REGION_US_WEST_2: "false"
+    REGION_US_WEST_1: "false"
+    REGION_EU_WEST_1: "false"
+    REGION_EU_CENTRAL_1: "false"
+    REGION_AP_SOUTHEAST_1: "false"
+    REGION_AP_NORTHEAST_1: "false"
+    REGION_AP_SOUTHEAST_2: "false"
+    REGION_AP_NORTHEAST_2: "false"
+    REGION_SA_EAST_1: "false"
